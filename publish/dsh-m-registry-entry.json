@@ -1,0 +1,12 @@
+{
+  "_comment": "Draft entry for the curated list (iasiv5/dsh-m registry.json). The curated list is hand-curated by the dsh-m author; a community PR may propose an entry. Copy this object into the `plugins` array of registry.json. Text must obey docs/registry-copy-guide.md: <=60 full-width units, Chinese, no precise numbers without a freshness mechanism, relations only in the trailing sentence. Only include `verified` for coupled entries; omit it (and use the '版本无关' wording) if the plugin survives DSH upgrades without per-release adaptation.",
+  "id": "dsh-prompt-enhance",
+  "name": "DSH Prompt Enhance",
+  "description": "输入框一键增强提示词：把草稿改写成更清晰具体的提示词并保持原语言，可一键恢复原文；另提供 enhance_prompt 工具，两入口共用同一管线。版本无关，详见仓库。",
+  "category": "watchlist",
+  "tags": ["提示词", "输入框", "改写"],
+  "decoupled": true,
+  "source": "github",
+  "github": "sun04222/dsh-dsh-prompt-chance",
+  "homepage": "https://github.com/sun04222/dsh-dsh-prompt-chance"
+}
