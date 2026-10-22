@@ -226,10 +226,32 @@ Invoke-WebRequest "https://awesome-dsh-plugin.com/p/sun04222/dsh-dsh-prompt-chan
 
 ---
 
-## 5. 待办（发布前收尾）
+## 5. 当前状态与剩余步骤
 
-- [ ] 仓库名 `dsh-dsh-prompt-chance` 疑似 `enhance` 笔误；改名会同步影响收录文件名与 URL，**建议推送前决定**。
-- [ ] 截图：`screenshots.json` + 1–8 张 `assets/*.png`（可选）。
-- [ ] 仓库满 1 天后提社区目录 PR。
-- [ ] （可选）发 npm，让市场显示下载量。
-- [ ] （可选）提精选清单 PR。
+### 已完成（2026-10-23 05:48 +08:00 本机时间）
+
+| 项 | 状态 |
+| --- | --- |
+| GitHub 仓库 | ✅ 公开：`https://github.com/sun04222/dsh-dsh-prompt-chance` |
+| 文件 | ✅ 18 个文件已上传，与本地**逐字节一致**（仓库根 = 插件根） |
+| 仓库描述 | ✅ `Prompt enhancement for DeepSeek Harness: composer button + enhance_prompt tool` |
+| Topics | ✅ `dsh-plugin`（CI 硬性要求）、`deepseek-harness`、`dsh`、`prompt-engineering`、`composer` |
+| Tag / Release | ✅ `v1.1.0`（GitHub 源安装与升级按 tag 跟踪） |
+| GitHub 搜索 | ✅ 已可搜到：按仓库名与 `topic:dsh-plugin` 各命中 1 条 |
+| 社区目录条目 | ✅ 已备好 `publish/awesome-dsh-plugin.yml`（YAML 已校验：category 合法、无 `npm` 键、描述以句号结尾） |
+| 精选条目草稿 | ✅ 已备好 `publish/dsh-m-registry-entry.json` |
+
+### 剩余步骤
+
+1. **提社区目录 PR（当前被仓库年龄卡住）**
+   仓库创建于 `2026-10-22T21:48:07Z`，CI 要求仓库满 1 天，因此**最早可提交时间 = 2026-10-23T21:48:07Z ＝ 北京时间 2026-10-24 05:48**。在此之前提交会因年龄不达标被 CI 拒（不是质量问题，第二天补提即可）。
+
+   提交方式：fork `awesome-dsh-plugin/awesome-dsh-plugin` → 新增 `data/plugins/sun04222__dsh-dsh-prompt-chance.yml`（内容复制 `publish/awesome-dsh-plugin.yml`）→ 提 PR。**一个 PR 最多 3 条、不要手工改 README。**
+
+2. **（可选）截图**：`screenshots.json` + 1–8 张 `assets/*.png`，让市场详情页有 App Store 式截图。
+3. **（可选）发 npm**：让市场显示下载量；发的时候包的 `repository` 必须指回本仓库。
+4. **（可选）提精选清单 PR**：把 `publish/dsh-m-registry-entry.json` 并进 `iasiv5/dsh-m` 的 `registry.json`（人工策展，选桶与文案由维护者定）。
+
+### 一个待你确认的点
+
+仓库名 `dsh-dsh-prompt-chance` 里的 `chance` 疑似 `enhance` 笔误。**现在改名成本最低**：仓库改名后收录文件名（`sun04222__<repo>.yml`）、`package.json` 的 `homepage`/`repository`/`bugs`、README 安装命令都要同步改。一旦收录进市场再改名，URL 会 404，得再提一次 PR 修条目。
