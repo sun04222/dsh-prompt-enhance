@@ -36,9 +36,9 @@
   "description": "…一句话英文描述（npm 与市场卡片都可能读取）…",
   "author": "sun04222",
   "license": "MIT",
-  "homepage": "https://github.com/sun04222/dsh-dsh-prompt-chance#readme",
-  "repository": { "type": "git", "url": "git+https://github.com/sun04222/dsh-dsh-prompt-chance.git" },
-  "bugs": { "url": "https://github.com/sun04222/dsh-dsh-prompt-chance/issues" },
+  "homepage": "https://github.com/sun04222/dsh-prompt-enhance#readme",
+  "repository": { "type": "git", "url": "git+https://github.com/sun04222/dsh-prompt-enhance.git" },
+  "bugs": { "url": "https://github.com/sun04222/dsh-prompt-enhance/issues" },
   "dsh": {
     "bundle": { "patch": "./cordis.patch.yml" },   // 必须有
     "client": { "platform": "web", "immediately": true, "inject": ["…"] }   // 有前端 UI 才需要
@@ -58,14 +58,14 @@
 社区目录一个插件一个 YAML，文件名为 `<owner>__<repo>.yml`。本仓库把成品放在 `publish/awesome-dsh-plugin.yml`，投稿时复制成：
 
 ```
-data/plugins/sun04222__dsh-dsh-prompt-chance.yml
+data/plugins/sun04222__dsh-prompt-enhance.yml
 ```
 
 内容（`description.en` 必填，`zh` 可留给维护者补）：
 
 ```yaml
-url: https://github.com/sun04222/dsh-dsh-prompt-chance
-name: sun04222/dsh-dsh-prompt-chance
+url: https://github.com/sun04222/dsh-prompt-enhance
+name: sun04222/dsh-prompt-enhance
 category: ui
 description:
   en: '…一句话，句号结尾，只讲功能…'
@@ -134,10 +134,10 @@ cd dsh-prompt-enhance
 git init -b main
 git add -A
 git commit -m "feat: prompt enhance plugin (composer button + enhance_prompt tool)"
-git remote add origin https://github.com/sun04222/dsh-dsh-prompt-chance.git
+git remote add origin https://github.com/sun04222/dsh-prompt-enhance.git
 git push -u origin main
 git tag v1.1.0 && git push origin v1.1.0
-gh repo edit sun04222/dsh-dsh-prompt-chance --add-topic dsh-plugin --add-topic deepseek-harness --add-topic dsh
+gh repo edit sun04222/dsh-prompt-enhance --add-topic dsh-plugin --add-topic deepseek-harness --add-topic dsh
 ```
 
 **方式 B：纯 API（无需 git）**
@@ -145,11 +145,11 @@ gh repo edit sun04222/dsh-dsh-prompt-chance --add-topic dsh-plugin --add-topic d
 `gh` 已登录，用 REST API 建仓库、写 blob/tree/commit、更新 ref，再打 tag 与 release：
 
 ```powershell
-gh repo create sun04222/dsh-dsh-prompt-chance --public `
+gh repo create sun04222/dsh-prompt-enhance --public `
   --description "Prompt enhancement for DeepSeek Harness: composer button + enhance_prompt tool" `
   --source . --remote origin    # 注意：--source/--push 仍需要 git，纯 API 请用 scripts/publish-github.mjs
 node scripts/publish-github.mjs   # 见 §2.4，用 gh 的 token 走 REST API 上传全部文件
-gh repo edit sun04222/dsh-dsh-prompt-chance --add-topic dsh-plugin --add-topic deepseek-harness
+gh repo edit sun04222/dsh-prompt-enhance --add-topic dsh-plugin --add-topic deepseek-harness
 ```
 
 ### 2.4 一键上传脚本
@@ -157,7 +157,7 @@ gh repo edit sun04222/dsh-dsh-prompt-chance --add-topic dsh-plugin --add-topic d
 本仓库附 `scripts/publish-github.mjs`：读 `gh auth token`，把工作区文件经 GitHub Git Data API（blob → tree → commit → 更新 `refs/heads/main`）上传，并可创建 tag 与 release。用法：
 
 ```powershell
-node scripts/publish-github.mjs --repo sun04222/dsh-dsh-prompt-chance --tag v1.1.0
+node scripts/publish-github.mjs --repo sun04222/dsh-prompt-enhance --tag v1.1.0
 ```
 
 ---
@@ -168,11 +168,11 @@ node scripts/publish-github.mjs --repo sun04222/dsh-dsh-prompt-chance --tag v1.1
 
 1. 确认仓库满足：`dsh.bundle` ✅、**仓库创建满 1 天**（CI 自动校验，刚建好的仓库会被拒，第二天再提即可）、有真实代码 ✅、已加 `dsh-plugin` topic、描述属实。
 2. Fork `awesome-dsh-plugin/awesome-dsh-plugin`。
-3. 新增**一个**文件 `data/plugins/sun04222__dsh-dsh-prompt-chance.yml`（内容见 §1.3，`publish/awesome-dsh-plugin.yml` 可直接复制）。
+3. 新增**一个**文件 `data/plugins/sun04222__dsh-prompt-enhance.yml`（内容见 §1.3，`publish/awesome-dsh-plugin.yml` 可直接复制）。
 4. **不要手工编辑 README**（README 由脚本从 `data/plugins/*.yml` 生成；一个 PR 最多 3 条）。
 5. 提 PR。CI 依次检查：条目数 → `dsh.bundle` → 仓库年龄 → awesome-lint 与站点构建。失败会指明改什么，同分支推送即可。
 6. 合并后 CI 重建站点与 npm 包，条目出现在：
-   - 站点页 `https://awesome-dsh-plugin.com/p/sun04222/dsh-dsh-prompt-chance/`
+   - 站点页 `https://awesome-dsh-plugin.com/p/sun04222/dsh-prompt-enhance/`
    - 目录 JSON `https://cdn.jsdelivr.net/npm/dsh-plugin-catalog@latest/plugins.json`
    - 索引 `https://cdn.jsdelivr.net/npm/dsh-plugin-catalog@latest/index.json`
    - dsh-market / dsh-m 的社区区搜索结果
@@ -200,17 +200,17 @@ node scripts/publish-github.mjs --repo sun04222/dsh-dsh-prompt-chance --tag v1.1
 
 ```powershell
 # ① 可安装性（GitHub 源）——收录的硬门槛
-dsh plugin --profile web add github:sun04222/dsh-dsh-prompt-chance
+dsh plugin --profile web add github:sun04222/dsh-prompt-enhance
 
 # ② 仓库元数据
-gh repo view sun04222/dsh-dsh-prompt-chance --json name,description,repositoryTopics,isPrivate,createdAt
+gh repo view sun04222/dsh-prompt-enhance --json name,description,repositoryTopics,isPrivate,createdAt
 
 # ③ 目录 JSON 是否已含本条目（合并后通常数分钟内，CDN 可能滞后数小时）
 $json = (Invoke-WebRequest "https://cdn.jsdelivr.net/npm/dsh-plugin-catalog@latest/plugins.json" -UseBasicParsing).Content | ConvertFrom-Json
-$json.plugins | Where-Object { $_.url -like "*dsh-dsh-prompt-chance*" } | Format-List name,owner,category,version,install,added
+$json.plugins | Where-Object { $_.url -like "*dsh-prompt-enhance*" } | Format-List name,owner,category,version,install,added
 
 # ④ 站点页（存在即收录成功）
-Invoke-WebRequest "https://awesome-dsh-plugin.com/p/sun04222/dsh-dsh-prompt-chance/" -UseBasicParsing | Select-Object StatusCode
+Invoke-WebRequest "https://awesome-dsh-plugin.com/p/sun04222/dsh-prompt-enhance/" -UseBasicParsing | Select-Object StatusCode
 
 # ⑤ 在 DSH 内搜索（最接近用户体验的验证）
 #    在会话里让我搜：dshm_search query="提示词增强"
@@ -228,30 +228,31 @@ Invoke-WebRequest "https://awesome-dsh-plugin.com/p/sun04222/dsh-dsh-prompt-chan
 
 ## 5. 当前状态与剩余步骤
 
-### 已完成（2026-10-23 05:48 +08:00 本机时间）
+### 已完成（2026-10-23 05:48 +08:00 本机时间；同日 12:2x 完成改名）
 
 | 项 | 状态 |
 | --- | --- |
-| GitHub 仓库 | ✅ 公开：`https://github.com/sun04222/dsh-dsh-prompt-chance` |
+| GitHub 仓库 | ✅ 公开：`https://github.com/sun04222/dsh-prompt-enhance`（旧名 `dsh-dsh-prompt-chance` 由 GitHub 自动 301 重定向） |
 | 文件 | ✅ 18 个文件已上传，与本地**逐字节一致**（仓库根 = 插件根） |
 | 仓库描述 | ✅ `Prompt enhancement for DeepSeek Harness: composer button + enhance_prompt tool` |
 | Topics | ✅ `dsh-plugin`（CI 硬性要求）、`deepseek-harness`、`dsh`、`prompt-engineering`、`composer` |
 | Tag / Release | ✅ `v1.1.0`（GitHub 源安装与升级按 tag 跟踪） |
 | GitHub 搜索 | ✅ 已可搜到：按仓库名与 `topic:dsh-plugin` 各命中 1 条 |
 | 社区目录条目 | ✅ 已备好 `publish/awesome-dsh-plugin.yml`（YAML 已校验：category 合法、无 `npm` 键、描述以句号结尾） |
+| 社区 PR 预置 | ✅ fork `sun04222/awesome-dsh-plugin` 分支 `add/sun04222-dsh-prompt-enhance` 已放好条目文件（等年龄达标后开 PR） |
 | 精选条目草稿 | ✅ 已备好 `publish/dsh-m-registry-entry.json` |
 
 ### 剩余步骤
 
-1. **提社区目录 PR（当前被仓库年龄卡住）**
-   仓库创建于 `2026-10-22T21:48:07Z`，CI 要求仓库满 1 天，因此**最早可提交时间 = 2026-10-23T21:48:07Z ＝ 北京时间 2026-10-24 05:48**。在此之前提交会因年龄不达标被 CI 拒（不是质量问题，第二天补提即可）。
+1. **提社区目录 PR（被仓库年龄卡住）**
+   仓库创建于 `2026-10-22T21:48:07Z`，CI 要求仓库满 1 天，因此**最早可提交时间 = 2026-10-23T21:48:07Z ＝ 北京时间 2026-10-24 05:48**（改名不影响 createdAt）。在此之前提交会因年龄不达标被 CI 拒。
 
-   提交方式：fork `awesome-dsh-plugin/awesome-dsh-plugin` → 新增 `data/plugins/sun04222__dsh-dsh-prompt-chance.yml`（内容复制 `publish/awesome-dsh-plugin.yml`）→ 提 PR。**一个 PR 最多 3 条、不要手工改 README。**
+   提交方式：fork `awesome-dsh-plugin/awesome-dsh-plugin` → 新增 `data/plugins/sun04222__dsh-prompt-enhance.yml` → 提 PR。**一个 PR 最多 3 条、不要手工改 README。**
 
 2. **（可选）截图**：`screenshots.json` + 1–8 张 `assets/*.png`，让市场详情页有 App Store 式截图。
 3. **（可选）发 npm**：让市场显示下载量；发的时候包的 `repository` 必须指回本仓库。
 4. **（可选）提精选清单 PR**：把 `publish/dsh-m-registry-entry.json` 并进 `iasiv5/dsh-m` 的 `registry.json`（人工策展，选桶与文案由维护者定）。
 
-### 一个待你确认的点
+### 已决策：仓库改名
 
-仓库名 `dsh-dsh-prompt-chance` 里的 `chance` 疑似 `enhance` 笔误。**现在改名成本最低**：仓库改名后收录文件名（`sun04222__<repo>.yml`）、`package.json` 的 `homepage`/`repository`/`bugs`、README 安装命令都要同步改。一旦收录进市场再改名，URL 会 404，得再提一次 PR 修条目。
+原名 `dsh-dsh-prompt-chance` 里的 `chance` 是 `enhance` 的笔误，已在被市场收录前改名为 `dsh-prompt-enhance`，与 npm 包名一致。改名后同步更新了：`package.json` 的 `homepage`/`repository`/`bugs`、README 安装命令、本指南全部引用、社区目录条目（URL 与文件名）、精选草稿。GitHub 对旧 URL 自动 301，已分享的旧链接不会断。

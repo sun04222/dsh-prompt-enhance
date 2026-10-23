@@ -7,6 +7,6 @@
   "tags": ["提示词", "输入框", "改写"],
   "decoupled": true,
   "source": "github",
-  "github": "sun04222/dsh-dsh-prompt-chance",
-  "homepage": "https://github.com/sun04222/dsh-dsh-prompt-chance"
+  "github": "sun04222/dsh-prompt-enhance",
+  "homepage": "https://github.com/sun04222/dsh-prompt-enhance"
 }

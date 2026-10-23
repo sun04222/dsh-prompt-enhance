@@ -34,13 +34,13 @@
   ],
   "author": "sun04222",
   "license": "MIT",
-  "homepage": "https://github.com/sun04222/dsh-dsh-prompt-chance#readme",
+  "homepage": "https://github.com/sun04222/dsh-prompt-enhance#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sun04222/dsh-dsh-prompt-chance.git"
+    "url": "git+https://github.com/sun04222/dsh-prompt-enhance.git"
   },
   "bugs": {
-    "url": "https://github.com/sun04222/dsh-dsh-prompt-chance/issues"
+    "url": "https://github.com/sun04222/dsh-prompt-enhance/issues"
   },
   "engines": {
     "node": ">=22"
