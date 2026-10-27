@@ -2,27 +2,22 @@
 
 把用户写下的**原始提示词**改写成**更清晰、更具体的提示词**，只返回改写结果本身；增强规则与输出契约对齐 WorkBuddy（CodeBuddy 桌面端）内置的「增强提示词」——**规则等价、措辞原创**（指令文本为本项目自行撰写，不含任何第三方文本），可脱离 WorkBuddy 独立运行。
 
-- 能力入口：输入框右侧「✦ 增强」按钮；Host 工具 `enhance_prompt`
-- 运行依赖：DSH 的 `llm` 服务（有可用模型路由即可）
-- 不依赖：WorkBuddy 安装目录、其 sidecar、任何网络私有接口、任何 npm 依赖
-- **零第三方依赖**：只用 DSH 宿主已有的 `llm` 服务与 Web 槽位，`package.json` 里没有 `dependencies`
-- **只产出提示词，不回答提示词**：输出固定信封 `{ success, text }`，空白输入直接返回 `empty_input`，不会替你把问题答了
-- **断网也能装上**：从 GitHub 安装不走 npm 源；已装则刷新一次页面即出现按钮
-
-## 快速开始
-
-设置 → 插件确认「提示词增强」已启用 → 输入框右侧点「✦ 增强」→ 草稿被替换为改写版；改坏了点「恢复原文」（手动改过草稿后该按钮自动消失，对齐 WorkBuddy 的 `contentDiverged`）。
+- 能力入口：输入框右侧「✦ 增强」按钮；Host 工具 `enhance_prompt`——**零第三方依赖**，只用 DSH 自带的 `llm` 服务与 Web 槽位
+- **只产出提示词、不回答提示词**：输出固定信封 `{ success, text }`，空白输入直接返回 `empty_input`
+- 契约对齐 WorkBuddy（规则等价、措辞原创），**不依赖**其安装目录、sidecar 或任何网络私有接口
 
 ## 安装
 
 ```powershell
-# 从 GitHub 安装（当前会话所在的 profile）
+# 从 GitHub 安装（当前会话所在的 profile），不走 npm 源
 dsh plugin --profile web add github:sun04222/dsh-prompt-enhance
-
-# 装了 dsh-market / dsh-m 的话，也可以直接在市场里搜「提示词增强」一键安装
 ```
 
 安装后在设置 → 插件里能看到「提示词增强」；前端按钮需要刷新一次页面。
+
+## 快速开始
+
+设置 → 插件确认「提示词增强」已启用 → 输入框右侧点「✦ 增强」→ 草稿被替换为改写版；改坏了点「恢复原文」（手动改过草稿后该按钮自动消失，对齐 WorkBuddy 的 `contentDiverged`）。
 
 ---
 
