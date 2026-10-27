@@ -5,6 +5,13 @@
 - 能力入口：输入框右侧「✦ 增强」按钮；Host 工具 `enhance_prompt`
 - 运行依赖：DSH 的 `llm` 服务（有可用模型路由即可）
 - 不依赖：WorkBuddy 安装目录、其 sidecar、任何网络私有接口、任何 npm 依赖
+- **零第三方依赖**：只用 DSH 宿主已有的 `llm` 服务与 Web 槽位，`package.json` 里没有 `dependencies`
+- **只产出提示词，不回答提示词**：输出固定信封 `{ success, text }`，空白输入直接返回 `empty_input`，不会替你把问题答了
+- **断网也能装上**：从 GitHub 安装不走 npm 源；已装则刷新一次页面即出现按钮
+
+## 快速开始
+
+设置 → 插件确认「提示词增强」已启用 → 输入框右侧点「✦ 增强」→ 草稿被替换为改写版；改坏了点「恢复原文」（手动改过草稿后该按钮自动消失，对齐 WorkBuddy 的 `contentDiverged`）。
 
 ## 安装
 

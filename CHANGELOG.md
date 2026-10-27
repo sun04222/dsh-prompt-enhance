@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.1.1
+
+- `scripts/publish-github.mjs`: new `--homepage <url>` (pass `""` to clear), `--private` for
+  first-publish visibility, and `--message` for the commit subject. Previously the homepage was
+  hard-wired to `<repo>#readme` and the repository always public, so publishing a plain static
+  project or an offline demo needed a follow-up manual edit.
+- No runtime, tool, or prompt behaviour changed.
+
 ## 1.1.0
 
 - Composer button in `conversation.input.right`: enhance / enhancing / restore-original / failed states, per-session reset, in-flight request cancelled on unmount.

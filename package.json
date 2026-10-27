@@ -1,6 +1,6 @@
 {
   "name": "dsh-prompt-enhance",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Prompt enhancement for DeepSeek Harness: a composer button and an enhance_prompt tool that rewrite a draft into a clearer, more specific prompt, following the same rules as WorkBuddy's enhance-prompt feature.",
   "type": "module",
   "main": "index.js",
